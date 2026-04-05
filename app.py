@@ -16,12 +16,8 @@ from langchain_classic.agents import AgentExecutor, create_tool_calling_agent
 from langchain_classic.tools.retriever import create_retriever_tool
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain_core.messages import HumanMessage, AIMessage
-import nltk
-try:
-    # This tries to load the component; if it fails, it downloads it
-    nltk.data.find('tokenizers/punkt_tab')
-except LookupError:
-    nltk.download('punkt_tab')
+
+
 
 # Suppress warnings
 logging.getLogger("transformers.dynamic_module_utils").setLevel(logging.ERROR)
