@@ -14,22 +14,22 @@ api_key = os.getenv("GROQ_API_KEY")
 # 2. DATASET
 data_samples = {
     'question': [
-        "what are the skills required?",
-        "tell me the summary of the pdf"
+        "What are the technical skills and responsibilities for the Python Developer role?",
+        "Provide a brief overview of Dolat Capital's mission and infrastructure."
     ],
     'answer': [
-        "The skills required include: Basics of Python (Data Structures, File Handling), Knowledge of Data Structures (stacks, queues, hashmaps, etc.) and Algorithms (searching, sorting, etc.), Utility Modules (os, sys, subprocess, datetime, basics of numpy and matplotlib), Object Oriented Programming using Python, Linux Commands, Bash Scripting, and Database (PostgreSQL).",
-        "Dolat Capital is a quantitative trading firm, founded in 1970, that operates at the intersection of financial markets and high-performance technology. They are looking for a Python Developer to design and develop applications, optimize modules, and manage a massive server cluster consisting of hundreds of units."
+        "Required skills include Python basics, Data Structures, Algorithms, Linux, Bash, and PostgreSQL. Responsibilities involve designing applications, unit testing, and optimizing modules.",
+        "Founded in 1970, Dolat Capital uses scientific principles for quantitative trading and manages a cluster of 100's of servers."
     ],
     'contexts': [
-        # Context 1: Contains EVERY skill mentioned in the answer [cite: 12-21]
-        ["Skills Required: Basics of Python (Data Structures, File Handling), Knowledge of Data Structures (stacks, queues, hashmaps, etc.) and Algorithms (searching, sorting, etc.), Utility Modules (os, sys, subprocess, datetime, basics of numpy and matplotlib), Object Oriented Programming using Python, Linux Commands, Bash Scripting, Database (PostgreSQL)."],
-        # Context 2: Contains the founding date and the server cluster details 
-        ["Founded in 1970, Dolat Capital is an investment management firm thriving in quantitative trading. Responsibilities include developing and managing the Cluster consisting of 100's of servers."]
+        
+        ["Skills: Basics of Python, Data Structures, Algorithms, Linux, Bash, PostgreSQL. Responsibilities: Designing and development of applications, Unit testing, and optimizing modules."],
+        
+        ["Founded in 1970, Dolat Capital pioneers who use scientific principles for quantitative trading. Responsibilities include managing the Cluster consisting of 100's of servers."]
     ],
     'ground_truth': [
-        "Python basics, Data Structures, Algorithms, Utility Modules (numpy/matplotlib), OOP, Linux, Bash, and PostgreSQL. [cite: 14-21]",
-        "Quantitative trading firm founded in 1970 seeking a Python Developer for app development and managing a cluster of 100s of servers. "
+        "Proficiency in Python, DS/Algo, Linux/Bash, and PostgreSQL for app development and optimization. [cite: 14-26]",
+        "A quantitative firm founded in 1970 using scientific methods to manage a 100+ server cluster. [cite: 2, 4, 28]"
     ]
 }
 dataset = Dataset.from_dict(data_samples)
